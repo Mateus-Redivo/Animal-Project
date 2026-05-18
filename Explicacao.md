@@ -16,13 +16,25 @@ git clone https://github.com/nome-da-turma/animal-project-seuusuario
 
 ---
 
-## 2. Fazendo o trabalho
+## 2. O que você precisa implementar
 
-Implemente os arquivos pedidos normalmente na sua IDE. Quando quiser enviar:
+Esta atividade tem dois arquivos para completar:
+
+**`enums/FurColor.java`** — o enum de cor de pelo do gato, seguindo o mesmo modelo do `TrainingLevel` que foi feito para o cachorro.
+
+**`model/Cat.java`** — a classe do gato, seguindo o mesmo modelo da classe `Dog` que já está pronta para você estudar.
+
+Leia os comentários dentro de cada arquivo — eles explicam exatamente o que criar.
+
+---
+
+## 3. Enviando o trabalho
+
+Quando quiser enviar, execute no terminal dentro da pasta do projeto:
 
 ```bash
 git add .
-git commit -m "implementando Dog e TrainingLevel"
+git commit -m "implementando Cat e FurColor"
 git push
 ```
 
@@ -30,13 +42,13 @@ Você pode fazer isso quantas vezes quiser. A cada push os testes rodam de novo.
 
 ---
 
-## 3. Vendo o resultado dos testes
+## 4. Vendo o resultado dos testes
 
 Depois do push, vá até o seu repositório no GitHub e clique em **Actions** no menu superior.
 
 Você vai ver uma linha com o nome do seu commit. O ícone ao lado indica o resultado:
 
-- Circulo amarelo — ainda está rodando, aguarde
+- Círculo amarelo — ainda está rodando, aguarde
 - Check verde — todos os testes passaram
 - X vermelho — algum teste falhou
 
@@ -44,28 +56,40 @@ Clique na linha para ver os detalhes.
 
 ---
 
-## 4. Entendendo o que falhou
+## 5. Entendendo o que falhou
 
 Dentro do Actions, clique em **grade** e depois em **Run tests**. Você vai ver a lista de todos os testes com o resultado de cada um. Por exemplo:
 
 ```text
-✔ TrainingLevel deve ter as 4 constantes definidas
-✔ Dog deve estender Animal
-✘ Dog.makeSound() deve conter 'barks' na saída
-✘ Dog.sleep() deve ser sobrescrito em Dog
+✔ FurColor deve ter as 7 constantes definidas
+✔ FurColor.getDisplayName() deve retornar o nome correto para cada constante
+✔ Cat deve estender Animal
+✘ Cat.makeSound() deve conter 'Meow' na saída
+✘ Cat.sleep() deve ser sobrescrito em Cat
 ```
 
 Cada teste tem um nome descrevendo exatamente o que está sendo verificado. Se falhou, é porque aquele ponto ainda não foi implementado corretamente.
 
 ---
 
-## 5. Corrigindo e reenviando
+## 6. Ordem sugerida para implementar
+
+Implemente nessa ordem para evitar que testes dependentes falhem por motivos errados:
+
+1. Complete o enum `FurColor` (constantes, campos, construtor, getters, `fromCode`)
+2. Depois implemente a classe `Cat` (herança, construtor, overrides, sobrecargas, métodos extras)
+
+Os testes de Cat que criam instâncias dependem do `FurColor` estar implementado. Se o `FurColor` estiver vazio, esses testes vão indicar isso com uma mensagem clara.
+
+---
+
+## 7. Corrigindo e reenviando
 
 Corrija o que estiver faltando, salve, e faça um novo push:
 
 ```bash
 git add .
-git commit -m "corrigindo makeSound do Dog"
+git commit -m "corrigindo makeSound do Cat"
 git push
 ```
 

@@ -1,23 +1,31 @@
 package enums;
 
 public enum TrainingLevel {
-    /*
-     * BEGINNER
-     * INTERMEDIATE
-     * ADVANCED
-     * PROFESSIONAL
-     */
+    BEGINNER(1, "Beginner"),
+    INTERMEDIATE(2, "Intermediate"),
+    ADVANCED(3, "Advanced"),
+    PROFESSIONAL(4, "Professional");
 
-    // final int code
-    // final String displayName
+    private final int code;
+    private final String displayName;
 
-    // Constructor TrainingLevel
+    TrainingLevel(int code, String displayName) {
+        this.code = code;
+        this.displayName = displayName;
+    }
 
-    // getCode()
+    public int getCode() {
+        return code;
+    }
 
-    // getDisplayName()
+    public String getDisplayName() {
+        return displayName;
+    }
 
-    // fromCode(int code) - metodo igual ao fromCode(int code) do Habitat, mas para
-    // TrainingLevel
-
+    public static TrainingLevel fromCode(int code) {
+        for (TrainingLevel t : values()) {
+            if (t.code == code) return t;
+        }
+        throw new IllegalArgumentException("Invalid TrainingLevel: " + code);
+    }
 }

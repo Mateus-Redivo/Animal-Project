@@ -24,12 +24,12 @@ jobs:
 
       - name: Compile student code
         run: |
-          javac -cp lib/junit.jar \
+          javac -d . -cp lib/junit.jar \
             $(find enums model util -name "*.java")
 
       - name: Compile tests
         run: |
-          javac -cp .:lib/junit.jar \
+          javac -d . -cp .:lib/junit.jar \
             $(find tests -name "*.java")
 
       - name: Run tests
