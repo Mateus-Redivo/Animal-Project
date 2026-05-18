@@ -1,0 +1,38 @@
+name: Autograding
+
+on: [push]
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Download JUnit
+        run: |
+          mkdir -p lib
+          curl -L https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.2/junit-platform-console-standalone-1.10.2.jar \
+            -o lib/junit.jar
+
+      - name: Compile student code
+        run: |
+          javac -cp lib/junit.jar \
+            enums/*.java \
+            model/*.java \
+            util/*.java \
+            tests/*.java
+
+      - name: Run tests
+        run: |
+          java -cp .:lib/junit.jar \
+            org.junit.platform.console.ConsoleLauncher \
+            --scan-classpath \
+            --fail-if-no-tests
