@@ -1,0 +1,69 @@
+ATIVIDADE — Modelagem da Classe Cachorro e  Enumerados
+Disciplina: Programação Orientada a Objetos
+Entrega individual
+
+==========================================
+
+OBJETIVO
+
+Praticar a criação de enumerados e classes em Java, modelando um domínio simples de animais com atributos categorizados.
+
+==========================================
+
+CÓDIGO BASE / MATERIAL DE REFERÊNCIA
+
+Repositório / Link: https://github.com/MRteaching/Animal-Project
+
+Este repositório contém a estrutura base de um projeto sobre animais. 
+Ele serve como ponto de partida para você adicionar os enumerados e a classe principal da atividade.
+
+==========================================
+
+O QUE FAZER
+
+Analise o material e desenvolva os seguintes aspectos:
+
+1. Criar o Enumerado de Porte
+   Crie um enum chamado Porte com os valores que representem os tamanhos possíveis de um cachorro (ex: PEQUENO, MEDIO, GRANDE).
+   Cada constante deve ter um atributo descritivo e um método para retorná-lo.
+
+2. Criar o Enumerado de Pelagem
+   Crie um enum chamado Pelagem com os valores que representem os tipos de pelo de um cachorro (ex: CURTO, LONGO, MEDIO).
+   Assim como o enum anterior, inclua um atributo e um método de acesso.
+
+3. Criar a Classe Cachorro
+   Crie uma classe chamada Cachorro com os seguintes atributos: nome (String), raca (String), porte (Porte) e pelagem (Pelagem).
+   Implemente construtor, getters, e um método toString() que exiba todas as informações do cachorro de forma legível.
+
+==========================================
+
+O QUE ENTREGAR
+
+- Os arquivos .java com os dois enumerados (Porte.java e Pelagem.java) e a classe Cachorro (Cachorro.java)
+- Um arquivo README.txt (ou comentários no próprio código) explicando:
+   → O que você identificou de problema em cada ponto
+   → O que você fez para resolver
+   → Por que sua solução é melhor que a original
+
+==========================================
+
+CRITÉRIOS DE AVALIAÇÃO
+
+O trabalho será avaliado em quatro critérios:
+
+  Corretude dos enumerados ........... 25%
+  Implementação da classe Cachorro ... 35%
+  Uso correto dos tipos enum ......... 25%
+  Clareza e organização do código .... 15%
+
+Os itens marcados como "opcional / extra" somam pontos adicionais para quem os implementar com qualidade.
+
+==========================================
+
+DICA
+
+Pense nos enumerados como tipos de dados fixos que representam categorias — não use Strings soltas para porte ou pelagem.
+A classe Cachorro deve depender dos enums, não o contrário.
+Comece pelos enums antes de criar a classe.
+
+==========================================

@@ -25,14 +25,16 @@ jobs:
       - name: Compile student code
         run: |
           javac -cp lib/junit.jar \
-            enums/*.java \
-            model/*.java \
-            util/*.java \
-            tests/*.java
+            $(find enums model util -name "*.java")
+
+      - name: Compile tests
+        run: |
+          javac -cp .:lib/junit.jar \
+            $(find tests -name "*.java")
 
       - name: Run tests
         run: |
           java -cp .:lib/junit.jar \
             org.junit.platform.console.ConsoleLauncher \
-            --scan-classpath \
+            --scan-classpath=. \
             --fail-if-no-tests
